@@ -1,2 +1,2 @@
 # Blog
-A bog for entries using google app engine.
+A blog for entries using google app engine.
