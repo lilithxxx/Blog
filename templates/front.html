@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<form method="post">
+      <button class="b2" name="newpost">&#8853;New Entry</button>
+    </form>
+    <br>
+    <br>
+    {% for blog in blogs %}
+    	<div class="blog">
+    <div class="blog-heading">
+    		<div class="blog-title"><a class="blog-title" href="/{{blog.key().id()}}">{{blog.subject}}</a></div>
+    		<div class="blog-date">{{blog.created.strftime("%d %b, %Y")}}</div>
+    	</div>
+    	   <pre class="blog-content">{{blog.content | safe}}</pre>
+    	</div>
+    {% endfor %}
+{% endblock %}

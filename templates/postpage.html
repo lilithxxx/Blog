@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<script>
+function delFunction() {
+    con = confirm("Are you sure you want to delete this post?");
+    if(con)
+      document.getElementById("d").value="delete";
+}
+</script>
+    <div class="blog">
+      <div class="blog-heading">
+      <form method="post">
+      <button class="b2 fa" name="active" id="d" onclick="delFunction()">&#xf014;Delete</button>
+      <button class="b2" name="active" value="update">&#8634;Update</button>
+    </form>
+    <br>
+    <br>
+      <div class="blog-title">{{blog.subject}}</div>
+      <div class="blog-date">{{blog.created.strftime("%d %b, %Y")}}</div>
+    </div>
+      <pre class="blog-content">{{blog.content| safe}}</pre>
+    </div>
+{% endblock %}
