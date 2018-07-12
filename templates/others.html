@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% for blog in posts %}
+    <div class="blog">
+    <div class="blog-heading">
+    		<div class="blog-title">{{blog.subject}}</div>
+    		<div class="blog-date">{{blog.created.strftime("%d %b, %Y")}}</div>
+    </div>
+    	   <pre class="blog-content">{{blog.content | safe}}</pre>
+    </div>
+    {% endfor %}
+    <footer class="age">
+        {{age}}
+    </footer>
+{% endblock %}

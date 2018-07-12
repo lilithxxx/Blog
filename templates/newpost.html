@@ -2,6 +2,7 @@
 
 {% block content %}
     <h2>New Post</h2>
+    <div>
     <form method="post">
       <label>
         <div>Subject</div>
@@ -9,12 +10,19 @@
       </label>
 
       <label>
-        <div>Blog-Content</div>
-        <textarea name="content">{{content | safe}}</textarea>
+        <div>Blog-Content (Use <a href="https://www.markdownguide.org/basic-syntax" target="_blank">markdown</a> for formatting)</div>
+        <textarea name="content">{{content}}</textarea>
       </label>
 
       <div class="error">{{error}}</div>
       <br>
-      <button id="b1">Post</button>
+      <button class="b1" title="Creates new entry">Post</button>
     </form>
+      <button class="b1" title="Discard Changes" onclick="location.href='/blog{{url_id}}';">Discard</button>
+    </div>
+<style type="text/css">
+  button{
+    float: left;
+  }
+</style>
 {% endblock %}

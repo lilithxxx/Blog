@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block content %}
+<body class="img">
+  <div>
+    <h2>SignUp</h2>
+    <form method="post">
+      <table>
+        <tr>
+          <td class="label">
+            Username
+          </td>
+          <td>
+            <input type="text" name="username" value="{{username}}"> 
+          </td>
+          <td>
+            Username must contain only letters and length at least 3 and at max 20 and it can't be the word 'newpost'(sorry about that :p)
+          </td>
+          <td class="error">
+            {{error_username}}
+          </td>
+        </tr>
+
+        <tr>
+          <td class="label">
+            Password
+          </td>
+          <td>
+            <input type="password" name="password" value="">
+          </td>
+          <td>
+            Password must contain a letter and a digit and length at least 3 and at max 20
+          </td>
+          <td class="error">
+            {{error_password}}
+          </td>
+        </tr>
+
+        <tr>
+          <td class="label">
+            Verify Password
+          </td>
+          <td>
+            <input type="password" name="verify" value="">
+          </td>
+          <td class="error">
+            {{error_verify}}
+          </td>
+        </tr>
+
+        <tr>
+          <td class="label">
+            Email (optional)
+          </td>
+          <td>
+            <input type="text" name="email" value="{{email}}">
+          </td>
+          <td class="error">
+            {{error_email}}
+          </td>
+        </tr>
+      </table>
+      <br>
+      <br>
+      <button class="b1">Submit</button>
+    </form>
+  </div>
+  </body>
+ {% endblock %}

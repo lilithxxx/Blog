@@ -10,14 +10,19 @@ function delFunction() {
     <div class="blog">
       <div class="blog-heading">
       <form method="post">
-      <button class="b2 fa" name="active" id="d" onclick="delFunction()">&#xf014;Delete</button>
-      <button class="b2" name="active" value="update">&#8634;Update</button>
+      <button class="b2 fa" name="active" id="d" onclick="delFunction()" title="Delete the entry">&#xf014;Delete</button>
+      <button class="b2" name="active" value="update" title="Update the entry">&#8634;Update</button>
     </form>
     <br>
     <br>
       <div class="blog-title">{{blog.subject}}</div>
       <div class="blog-date">{{blog.created.strftime("%d %b, %Y")}}</div>
     </div>
-      <pre class="blog-content">{{blog.content| safe}}</pre>
+      <pre class="blog-content">{{blog.content | convert_markup | safe}}</pre>
     </div>
+    <div class="foot">
+  <footer class="age">
+        {{age}}
+    </footer>
+  </div>
 {% endblock %}

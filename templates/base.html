@@ -1,16 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link type="text/css" rel="stylesheet" href="/static/main.css">
+  <link type="text/css" rel="stylesheet" href="/static/main.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <title>Blog</title>
 </head>
 
 <body>
-  <a href="/" class="main-title">
-    Blog(Home Page)
+  <a href="/blog" class="main-title" title="Goes back to Home Page">
+    Blog
   </a>
 
+  <div class="login-area">
+    {% if user %}
+      {{user.name}} (<a class="login-link" href="/logout" title="Logout">Logout</a>)
+    {% else %}
+      <a class="login-link" href="/login" title="Login">Login</a>
+      |
+      <a class="login-link" href="/" title="SignUp">SignUp</a>
+    {% endif %}
+  </div>
   <div id="content">
   {% block content %}
   {% endblock %}
@@ -18,3 +27,4 @@
 </body>
 
 </html>
+
